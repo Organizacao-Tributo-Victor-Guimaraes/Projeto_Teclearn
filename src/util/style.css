@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+header{
+    background-color: #ccff33;
+    height: 80px;
+
+}
+
+
+#life {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+#contador-vida {
+    position: absolute;
+    top: 25px;
+    left: 90px; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
