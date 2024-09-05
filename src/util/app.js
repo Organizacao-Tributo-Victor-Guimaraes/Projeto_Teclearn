@@ -150,15 +150,3 @@ botaoProximaPergunta.addEventListener('click', () => {
 
 // inicializa o jogo
 mostrarPergunta();
-
-const setaAumentar = document.createElement('button');
-setaAumentar.textContent = '↑';
-setaAumentar.onclick = aumentarVida;
-
-const setaDiminuir = document.createElement('button');
-setaDiminuir.textContent = '↓';
-setaDiminuir.onclick = diminuirVida;
-
-document.body.appendChild(setaAumentar);
-document.body.appendChild(contadorVida);
-document.body.appendChild(setaDiminuir);

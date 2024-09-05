@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-family: "Reddit Sans Condensed", sans-serif;
   }
 
   body{
@@ -26,20 +28,29 @@
     background-color: #ccff33;
     height: 650px;
   }
+
+  .pergunta-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
   #pergunta{
     text-align: center;
     background-color: white;
     width: 50%;
-   
+    
   }
 
+
   #opcoes-respostas{
-    margin-top: 50%;
+    margin-top: 70px;
     display: flex;
    flex-direction: column;
    align-items: center;
     gap: 50px;
   }
+
+  
 
   #opcoes-respostas button {
     width: 200px; 
@@ -51,8 +62,29 @@
     border-radius: 10px;
     border: 3px black solid;
   }
-
   #opcoes-respostas button:hover {
+    transform: scale(1.02);
+    background-color:  #ff4dff;
+  }
+
+  .responder {
+    width: 200px;
+    position: relative;
+    top: 40px;
+   left: 50%;
+  }
+  #botao-proxima-pergunta {
+    width: 150px;
+    height: 30px;
+    padding: 10px; 
+    background-color:  #990099;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px black solid;
+  }
+
+  #botao-proxima-pergunta:hover{
     transform: scale(1.02);
     background-color:  #ff4dff;
   }
