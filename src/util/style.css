@@ -36,7 +36,7 @@
   }
   #pergunta{
     text-align: center;
-    background-color: white;
+    background-color: rgba(163, 156, 156, 0.838);
     width: 50%;
     
   }
@@ -57,6 +57,7 @@
     height: 50px;
     padding: 10px; 
     background-color:  #990099;
+    color: white;
     transition: 0.5s;
     cursor: pointer;
     border-radius: 10px;
@@ -65,19 +66,33 @@
   #opcoes-respostas button:hover {
     transform: scale(1.02);
     background-color:  #ff4dff;
+    color: black;
   }
 
-  .responder {
-    width: 200px;
-    position: relative;
-    top: 40px;
-   left: 50%;
-  }
+  #opcoes-respostas button.disabled {
+    background-color: #d3d3d3; 
+    color: #a9a9a9; 
+    cursor: not-allowed;
+    border: 2px solid #a9a9a9;
+    pointer-events: none; 
+}
+
+#opcoes-respostas button.disabled:hover {
+    transform: none; 
+    background-color: #d3d3d3;
+}
+
+.responder {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; 
+}
   #botao-proxima-pergunta {
     width: 150px;
     height: 30px;
     padding: 10px; 
     background-color:  #990099;
+    color: white;
     transition: 0.5s;
     cursor: pointer;
     border-radius: 10px;
@@ -87,7 +102,14 @@
   #botao-proxima-pergunta:hover{
     transform: scale(1.02);
     background-color:  #ff4dff;
+    color: black;
   }
+
+  #botao-proxima-pergunta:disabled {
+    background-color: #6a006a; 
+    color: rgb(122, 117, 117); 
+}
+
   #contador-vida {
     position: absolute;
     top: 20px; 
@@ -96,20 +118,119 @@
     font-weight: bold;
     color: #333;
   }
-  
-  
-  @media (min-width: 768px) {
-    header {
+
+
+@media (max-width: 767px) {
+  body {
+      background-color: #e6ffb3; 
+  }
+
+  #life {
+      width: 20px; 
+      top: 10px; 
+      left: 10px;
+  }
+
+  #contador-vida {
+      top: 15px; 
+      left: 40px; 
+      font-size: 16px;
+  }
+
+  #pergunta {
+      width: 80%; 
+      font-size: 18px;
+  }
+
+  #opcoes-respostas button {
+      width: 150px; 
+      height: 45px;
+      font-size: 14px;
+  }
+
+  #botao-proxima-pergunta {
+      width: 130px;
+      height: 40px;
+  }
+
+  main {
+      height: auto; 
+  }
+}
+
+@media (min-width: 768px) {
+  header {
       height: 80px; 
-    }
-    #life {
+  }
+
+  #life {
       width: 40px; 
       top: 20px; 
       left: 30px; 
-    }
-    #contador-vida {
-      top: 25px; 
-      left: 90px; 
-      font-size: 24px; 
+  }
+
+  #contador-vida {
+      top: 25px;
+      left: 90px;
+      font-size: 24px;
+  }
+
+  #pergunta {
+      width: 60%; 
+      font-size: 24px;
+  }
+
+  #opcoes-respostas button {
+      width: 250px;
+      height: 60px;
+      font-size: 18px;
+  }
+
+  #botao-proxima-pergunta {
+      width: 200px;
+      height: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+      background-color: #e6ffb3; 
+  }
+
+  header {
+      height: 70px; 
+  }
+
+  #life {
+      width: 35px; 
+      top: 18px; 
+      left: 25px; 
+  }
+
+  #contador-vida {
+      top: 22px; 
+      left: 70px; 
+      font-size: 20px; 
+  }
+
+  #pergunta {
+      width: 70%; 
+      font-size: 20px; 
+  }
+
+  #opcoes-respostas button {
+      width: 180px; 
+      height: 50px; 
+      font-size: 16px; 
+  }
+
+  .responder {
+      margin-top: 40px; 
+  }
+
+  #botao-proxima-pergunta {
+      width: 180px; 
+      height: 45px; 
+      font-size: 16px; 
   }
 }

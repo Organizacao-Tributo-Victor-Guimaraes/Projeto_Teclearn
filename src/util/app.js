@@ -1,3 +1,19 @@
+//Registrando o service worker
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registrado com sucesso:', registration);
+      })
+      .catch(error => {
+        console.log('Falha ao registrar o Service Worker:', error);
+      });
+  });
+}
+
+//Sistema de quiz
+
 const contadorVida = document.getElementById('contador-vida');
 const valorInicial = 5;
 const pergunta = document.getElementById('pergunta');
@@ -16,19 +32,19 @@ const perguntas = [
     respostasErradas: ['Saturno', 'Marte', 'Vênus']
   },
   {
-    pergunta: '3?',
-    respostaCerta: 'Júpiter',
-    respostasErradas: ['Saturno', 'Marte', 'Vênus']
+    pergunta: 'Qual é a extensão padrão de arquivos JavaScript?',
+    respostaCerta: '.js',
+    respostasErradas: ['.html', '.json', '.css']
   },
   {
-    pergunta: '44?',
-    respostaCerta: 'Júpiter',
-    respostasErradas: ['Saturno', 'Marte', 'Vênus']
+    pergunta: 'Em Python, como você imprime algo na tela?',
+    respostaCerta: 'print()',
+    respostasErradas: ['echo()', 'System.out.println()', 'console.log()']
   },
   {
-    pergunta: '55?',
-    respostaCerta: 'Júpiter',
-    respostasErradas: ['Saturno', 'Marte', 'Vênus']
+    pergunta: 'Qual o melhor professor de Engenharia de Software?',
+    respostaCerta: 'Todos!!!',
+    respostasErradas: ['Silvio', 'Bento', 'Maycon']
   },
 ];
 
@@ -59,6 +75,8 @@ function diminuirVida() {
 function mostrarPergunta() {
   if (perguntasNormais.length === 0 && perguntasErradas.length === 0) {
     alert('Parabéns! Você completou todas as tarefas!');
+    botaoProximaPergunta.textContent = 'Finalizar tarefa'; // Mudar o texto do botão
+    botaoProximaPergunta.disabled = false;
     return;
   }
 
@@ -87,6 +105,10 @@ function mostrarPergunta() {
       perguntasNormais.splice(currentQuestionIndex, 1); 
     } else {
       perguntasErradas.shift();
+    }
+
+    if (perguntasNormais.length === 0 && perguntasErradas.length === 0) {
+      botaoProximaPergunta.textContent = 'Finalizar tarefa';
     }
   });
   respostas.push(respostaCertaBotao);
@@ -119,6 +141,7 @@ function mostrarPergunta() {
 function bloquearRespostas() {
   const botoes = opcoesRespostas.querySelectorAll('button');
   botoes.forEach((botao) => {
+    botao.classList.add('disabled');
     botao.disabled = true;
   });
 }
@@ -147,6 +170,7 @@ function proximaPergunta() {
 botaoProximaPergunta.addEventListener('click', () => {
   proximaPergunta();
 });
+
 
 // inicializa o jogo
 mostrarPergunta();
