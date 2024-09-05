@@ -5,7 +5,7 @@
   }
   
   header {
-    background-color:#663d00;
+    background-color: #ccff33;
     height: 60px;
   }
   
@@ -18,7 +18,7 @@
   }
 
   main{
-    background-color: #663d00;
+    background-color: #ccff33;
     height: 650px;
   }
   #pergunta{
@@ -36,7 +36,16 @@
   #opcoes-respostas button {
     width: 200px; 
     padding: 10px; 
-    background-color: ;
+    background-color:  #990099;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px black solid;
+  }
+
+  #opcoes-respostas button:hover {
+    transform: scale(1.02);
+    background-color:  #ff4dff;
   }
   #contador-vida {
     position: absolute;
