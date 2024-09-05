@@ -3,10 +3,15 @@
     padding: 0;
     text-decoration: none;
   }
+
+  body{
+    background-color: #ccff33;
+  }
   
   header {
-    background-color: #ccff33;
+    background-color: aqua;
     height: 60px;
+    border-radius: 10px;
   }
   
   #life {
@@ -23,18 +28,22 @@
   }
   #pergunta{
     text-align: center;
+    background-color: white;
+    width: 50%;
+   
   }
 
   #opcoes-respostas{
-    margin-top: 30px;
+    margin-top: 50%;
     display: flex;
    flex-direction: column;
    align-items: center;
-    gap: 20px;
+    gap: 50px;
   }
 
   #opcoes-respostas button {
     width: 200px; 
+    height: 50px;
     padding: 10px; 
     background-color:  #990099;
     transition: 0.5s;
