@@ -6,7 +6,7 @@ Trabalho da faculdade a ser desenvolvido ao longo do semestre com intuito de tes
 
 Desenvolvido por <br>
 [João Barros Guatura da Costa](https://github.com/JoaoGuatura "João Barros"). `RA: 22013545-2`<br>
-[--]( --"--- "). <br>
+[Rafael Souza Osadzuk]("22137934-2"). <br>
 [--]( --"--- "). <br>
 [--]( --"--- "). <br>
 [--]( --"--- "). 
